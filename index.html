@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 쉘 예제</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>간단한 웹 쉘</h1>
+    <form id="commandForm">
+        <input type="text" id="cmd" placeholder="명령어 입력" />
+        <input type="submit" value="실행" />
+    </form>
+    <pre id="output"></pre>
+
+    <script>
+        document.getElementById('commandForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // 폼 제출 방지
+            var cmd = document.getElementById('cmd').value;
+            document.getElementById('output').textContent = "입력한 명령어: " + cmd;
+        });
+    </script>
+</body>
+</html>
